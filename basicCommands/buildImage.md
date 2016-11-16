@@ -50,19 +50,30 @@ Donde:
  * <repository_name> nombre del repositorio creado con la registry
  * <tag> es el numero de version de la build, nos permite versionar la imagen
 
-* Subir la imagen a la registry 
-
+* Subir la imagen a la registry de Docker
+ 
 ```
 docker push <username>/<repository_name>:<tag>
 ```
 
+## Utilizando la imagen
 
+Habiendo construido la imagen, puede resultar de interes correr un contenedor
+a partir de la misma.
 
+```
+docker run -d -p 8080:80 <username>/<repository_name>:<tag>
+```
 
+Ingresar en el navegador a localhost:8080.
 
+Para detener la imagen:
 
+```
+docker stop <container_name>
+```
 
-
+Para ver el nombre del container, recuerden buscarlo con `docker ps`
 
 # Referencias
 
